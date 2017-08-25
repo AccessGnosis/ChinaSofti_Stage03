@@ -12,7 +12,7 @@
 	
 	create sequence userinfo_seq
 	start with 100
-	step 1;
+	increment by 1;
 4. 详细设计
 	class Userinfo
 	DAO接口
