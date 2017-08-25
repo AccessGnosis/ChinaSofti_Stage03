@@ -23,6 +23,8 @@
 		
 	class ImplXXX implements DAO{}
 	
-	service:调用业务处理方法做进一步的处理。
+	class service:调用业务处理方法做进一步的处理。
 	
 	class TestXXX{}
+5. 编码操作
+6. 测试
