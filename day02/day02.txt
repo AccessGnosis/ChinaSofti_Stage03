@@ -15,5 +15,14 @@
 	step 1;
 4. 详细设计
 	class Userinfo
-	DAP接口
-		save(userinfo)
+	DAO接口
+		save(userinfo);
+		update(userinfo);
+		findAll();
+		deleteById(id);
+		
+	class ImplXXX implements DAO{}
+	
+	service:调用业务处理方法做进一步的处理。
+	
+	class TestXXX{}
