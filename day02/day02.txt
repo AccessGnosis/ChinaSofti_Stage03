@@ -1,0 +1,19 @@
+1. 需求分析：
+	创建一个userinfo用户能做增删改查功能
+2. 概要设计
+3. 数据库的设计
+	create table userinfo(
+		id number(4) primary key,
+		name varchar2(30) not null,
+		password varchar2(36),
+		account number(10,2),
+		email varchar2(30) not null
+	);
+	
+	create sequence userinfo_seq
+	start with 100
+	step 1;
+4. 详细设计
+	class Userinfo
+	DAP接口
+		save(userinfo)
