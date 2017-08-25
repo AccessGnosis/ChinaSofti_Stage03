@@ -8,6 +8,8 @@
 */
 package com.chinasofti.day02.hierarchy;
 
+import java.util.List;
+
 public interface UserinfoDAO {
 	// 保存对象
 	boolean save(Userinfo userinfo);
@@ -16,7 +18,10 @@ public interface UserinfoDAO {
 	boolean update(Userinfo userinfo);
 	
 	//查询所有对象
-	findAll
+	List<Userinfo> findAll();
+	
+	//查询一个对象
+	Userinfo find();
 	
 	//删除对象
 	boolean delete();
