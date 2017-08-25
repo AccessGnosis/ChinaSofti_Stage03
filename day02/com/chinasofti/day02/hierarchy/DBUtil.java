@@ -11,6 +11,7 @@ package com.chinasofti.day02.hierarchy;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.UUID;
@@ -38,12 +39,70 @@ public class DBUtil {
 	}
 
 	public static void close(Connection conn) {
-		if(conn != null){
+		if (conn != null) {
 			try {
 				conn.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	static boolean close(ResultSet rs, PreparedStatement pstm, Connection conn) {
+		int count = 0;
+		if (rs != null) {
+			try {
+				rs.close();
+				++count;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (pstm != null) {
+			try {
+				pstm.close();
+				++count;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (conn != null) {
+			try {
+				conn.close();
+				++count;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		if (count == 3)
+			return true;
+		else
+			return false;
+	}
+
+	static boolean close(PreparedStatement pstm, Connection conn) {
+		int count = 0;
+		if (pstm != null) {
+			try {
+				pstm.close();
+				++count;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (conn != null) {
+			try {
+				conn.close();
+				++count;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		if (count == 2)
+			return true;
+		else
+			return false;
 	}
 }
