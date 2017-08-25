@@ -1,0 +1,419 @@
+
+1. 在Oracle中,给Student表添加Address列，如下代码正确的是（）。 
+ A. ALTER TABLE student        ADD COLUMN（address VARCHAR2(20)） 
+ B. UPDATE TABLE student        ADD COLUMN（address VARCHAR2(20)） 
+ C. UPDATE TABLE student        ADD（address VARCHAR2(20)） 
+ D. ALTER TABLE student        ADD（address VARCHAR2(20)） 
+
+2. 在Oracle中，有表Person，如下：
+ ID   Name   Tel
+ 001   Amber  1234
+ 002   Amy   2345
+ 003   Emily   4567
+ 004   Eric    5678
+ 005   Roy    6789
+ SELECT Tel FROM Person WHERE Name = ‘A%’;   
+ 执行以上查询，结果是:
+ A. 1234
+ B. 2345
+ C. 4567
+ D. 运行后结果是“未选定行”
+
+3. 在Oracle中，控制年龄必须在18到50之间(包含18和50)，可使用的代码是（）。
+  A. age>18 and age<50
+ B. age>=18 and age<=50
+ C. age>=18 && age<=50
+ D. age>18 && age<50
+
+4. 下面关于序列的描述不正确的是：（） 
+ A. 序列和表一样，都是Oracle数据库中的对象 
+ B. 序列产生的值，可以作为表的主键值 
+ C. 在序列的使用中，最好的方式是多个表可以共用一个序列，来减少Oracle数据库序列的数量 
+ D. MySql数据不支持序列 
+
+ 5. 下列会自动创建索引的约束的是：（）。 
+  A. UNIQUE 
+ B. NOT NULL 
+ C. FOREIGN KEY 
+ D. CHECK 
+
+6. 在Oracle中，不能通过DROP关键字进行删除的是（）。 
+  A. 表
+ B. 视图
+ C. 表中记录
+ D. 序列
+
+7. 如果查询表a(有3行数据)和表b（有4行数据），使用SELECT  * FROM a,b，返回的查询结果的行数是：（）。 
+  A. 7         
+ B. 1         
+ C. 0         
+ D. 12 
+
+8. 分析如下代码，语法正确的Sql语句是（）。 
+  A. SELECT class,COUNT(stuId) FROM students WHERE stuAge>18 GROUP BY class HAVING count(stuId)>3 
+  B. SELECT name,class,COUNT(stuId) FROM students WHERE stuAge>18 GROUP BY class HAVING count(stuId)>3 
+  C. SELECT class,COUNT(stuId) FROM students GROUP BY class HAVING stuAge>18 
+  D. SELECT name,class,COUNT(stuId) FROM students WHERE COUNT(stuId)>3 GROUP BY class 
+正确答案：A
+9. 在Oracle中，删除表Student中的所有数据，可以使用的Sql是（）。
+  A. DROP TABLE Student
+ B. DELETE FROM Student
+ C. DELETE * FROM Student
+ D. DROP * FROM Student
+
+10. 在service表中，查询os账号名为：huangr 的unix服务器ip地址，os帐号名，下列sql语句正确的是：
+  A. select unix_host,os_username from service 
+where os_username = 'huangr';
+ B. select unix_host,os_username from service 
+where os_username = 'HUANGR';
+ C. select unix_host,os_username from service 
+where os_username = "huangr";
+ D. select unix_host,os_username from service 
+where os_username = "HUANGR";
+
+11. 下列属于DML语句的是 ：（） 。
+  A. COMMIT         
+ B. INSERT     
+ C. DROP   
+ D. GRANT 
+
+12. Oracle中查询的时候可以去掉重复记录的是()
+  A. SELECT DISTINCT name FROM user
+ B. SELECT name DISTINCT FROM user
+ C. SELECT name FROM user
+ D. SELECT name FROM user LIMIT 1
+
+ 13. 下面约束中只能定义在列级的是：（）。 
+  A. UNIQUE 
+ B. NOT NULL 
+ C. FOREIGN KEY 
+ D. PRIMARY KEY 
+
+14. 显示上个月的今天，这个月的今天，下个月的今天，精度到时、分、秒，下列sql语句正确的是：
+  A. alter session set nls_date_format = 'yyyy mm dd hh24:mi:ss';
+select add_months(sysdate,-1),sysdate,add_months(sysdate,1) from dual;
+ B. alter user set nls_date_format = 'yyyy mm dd hh24:mi:ss';
+select add_months(sysdate,-1),sysdate,add_months(sysdate,1) from dual;
+ C. alter session set nls_date_format = 'yyyy mm dd hh24:mi:ss';
+select last_month(),this_month(),next_month() from dual;
+ D. alter user set nls_date_format = 'yyyy mm dd hh24:mi:ss';
+select last_month(),this_month(),next_month() from dual;
+
+15. 现有如下建表SQL语句： CREATE TABLE departments (   department_id NUMBER(4) PRIMARY KEY,   department_name VARCHAR2(20),   city  VARCHAR2(20),   province VARCHAR2(20) ) 下面插入语句正确的是：( )。 
+  A. INSERT INTO departments VALUES(300,’abc’); 
+ B. INSERT INTO departments(department_name,department_id) VALUES(300,’design’); 
+ C. INSERT INTO departments(department_name,city) VALUES(‘design’,’bj’); 
+ D. INSERT INTO departments VALUES(300,’abc’,null,null); 
+
+16. 操作cost表，若一个月使用了200小时,计算每种资费标准对应的最终费用是多少（考虑单位费用和基础费用为null的情况，最终费用=固定费用+超时部分×单位费用），下列sql语句正确的是：
+  A. select id,
+nvl(base_cost,0) + (200 - nvl(base_duration,0)) * nvl(unit_cost,0)  fee
+from cost;
+ B. select id,nvl(base_cost,0)  fee from cost;
+ C. select id,200*nvl(unit_cost,0)  fee from cost;
+ D. select id, base_cost + (200 - base_duration)*unit_cost fee from cost;
+
+17. 在Oracle数据库中，关于主键约束与唯一约束说法错误的是（）。 
+  A. 主键列的数据类型不限，但此列必须是唯一并且非空 
+ B. 一张数据表只能有一个唯一约束 
+ C. 唯一性约束所在的列允许空值 
+ D. 数据库支持两个列做联合主键 
+
+18. Oracle数据库中，在SQL语句中连接字符串的方法是：（）。 
+  A. CAT 
+ B. CONCAT 
+ C. JOIN 
+ D. UNION 
+
+19. 查询cost表中资费名称，月固定费用，月包在线时长，单位费用,下列sql语句正确的是：
+  A. select name/base_duration/base_cost/unit_cost from cost
+ B. select name，base_cost,unit_cost from cost
+ C. select name and base_duration and base_cost and unit_cost from cost
+ D. select name,base_duration,base_cost,unit_cost from cost
+
+20.  现有a表和b表 表a：jigou(机构)，kehhao(客户号)，jiaoyrq(交易日期),jioyje(交易金额) 表b: kehhao(客户号)，表b为VIP客户号表 统计分机构VIP客户的数量，下面SQL语句正确的是:（）。 
+  A. SELECT COUNT(a.kehhao) FROM a INNER JOIN b ON a.kehhao = b.kehhao GROUP BY jigou 
+ B. SELECT COUNT(a.kehhao) FROM a INNER JOIN b ON a.kehhao = b.kehhao ORDER BY jigou 
+ C. SELECT SUM(a.kehhao) FROM a INNER JOIN b ON a.kehhao = b.kehhao ORDER BY jigou 
+ D. SELECT COUNT(a.kehhao) FROM a INNER JOIN b ON a.kehhao = b.kehhao HAVING jigou 
+
+21. 可以在Oracle中获取当前时间的Sql语句是（） 
+  A. SELECT SYSDATE
+ B. SELECT SYSDATE FROM DUAL
+ C. SELECT DATE
+ D. SELECT DATE FROM DUAL
+
+ 22. 在oracle中，判断一条记录的某个列是否为NULL，应该使用:( )。 
+  A. != 
+ B. <> 
+ C. IS 
+ D. = 
+
+23. 以下选项中可以用来从表 state中删除列 update_dt 的是( )。 
+  A. ALTER  TABLE  state  DROP  COLUMN  update_dt; 
+ B. ALTER  TABLE  state  DELETE  COLUMN  update_dt; 
+ C. DROP  COLUMN  update_dt  FROM  state; 
+ D.  REMOVE  COLUMN  update_dt  FROM  state; 
+
+24. 下面是SqlPlus命令的是：（）。 
+  A. DESC 
+ B. ALTER 
+ C. SELECT 
+ D. DELETE 
+
+25. 下列SQL语句执行后的结果是：（）。 SQL>  CREATE TABLE t_info( id NUMBER(4) ) ; SQL>  INSERT INTO t_info VALUES(2) ; SQL>  SAVEPOINT A ; SQL>  INSERT INTO t_info VALUES(3) ; SQL>  INSERT INTO t_info VALUES(4) ; SQL>  SAVEPOINT B;  SQL>  INSERT INTO t_info VALUES(5) ; SQL>  ROLLBACK TO B ; SQL>  SELECT * FROM t_info; 
+  A. 在t_info表中可以看到id是2的数据 ,看不到id是 3,4,5的数据 
+ B. 在t_info表中可以看到id是2,3，4的数据 ,看不到id是 5的数据   
+ C. 在t_info表中可以看到id是2,3,4,5的数据 
+ D. 在t_info表中可以看到id是2,5的数据, 看不到id是 3,4的数据 
+
+26. 试图使用下面句子查询数据： SELECT 100/NVL(quantity, 0) FROM inventory; quantity为 NULL 空值时，将导致出错，其原因是：（）
+  A. 除数表达式为空值. 
+ B. 函数参数数据类型不一致. 
+ C. 空值不能被转成实际值 
+ D. 除数表达式为零 
+
+27. 下列Oracle语句中，属于DDL语句的是（） 
+  A. DROP
+ B. INSERT
+ C. DELETE
+ D. SELECT
+
+28. 以下选项中可以用来在books表的isbn列上创建一个主键约束pk_books的是（）。 
+  A. CREATE PRIMARY KEY ON books(isbn); 
+ B. CREATE CONSTRAINT pk_books PRIMARY KEY ON books(isbn); 
+ C. ALTER TABLE books ADD CONSTRAINT pk_books PRIMARY KEY (isbn); 
+ D. ALTER TABLE books ADD PRIMARY KEY (isbn); 
+
+29. 在Oracle中，当数据量较大时，删除表中所有数据，效率较高的是（）。 
+  A. DELETE FROM Student 
+  B. DELETE FROM Student WHERE id>0 
+  C. TRUNCATE table Student 
+  D. TRUNCATE table Student WHERE id>0 
+
+30. 下列Oracle语句中，属于DCL的有（）
+  A. GRANT
+ B. DESC
+ C. CONNECT
+ D. INSERT
+
+ 31. 现有订单表(orders)，包含字段:cid(顾客编号),pid(产品编号)。若查询既订购了产品P01，又订购了产品P02的顾客编号，下列Sql语句正确的是（） 
+  A. SELECT DISTINCT(cid) FROM orders o1 WHERE o1.pid IN(‘p01’,’p02’) 
+ B. SELECT DISTINCT(cid) FROM ORDERS o1,orders o2 WHERE o1.pid=’p01’ AND o2.pid=’p02’ AND o1.cid=o2.cid 
+ C. SELECT DISTINCT(cid) FROM orders WHERE pid=’p01’ AND cid IN(select cid FROM orders WHERE pid=’p02’) 
+ D. SELECT DISTINCT(cid) FROM orders o1,orders o2 WHERE o1.pid=’p01’ AND o2.pid=’p02’ 
+
+32. DELETE和 TRUNCATE 都可以用来删除表内容，以下描述正确的是：（）。 
+  A. TRUNCATE 不需要 RollbackSegment 
+ B. DELETE 不需要RollbackSegment 
+ C. TRUNCATE在 提交COMMIT之前仍可回滚 
+ D. TRUNCATE还可以删除表结构 
+
+33. 一个VIEW被以下语句创建，请问在该VIEW上可进行操作是：（）。 CREATE VIEW usa_states AS SELECT *FROM state WHERE cnt_code =1 WITH READ ONLY; 
+  A. SELECT 
+ B. SELECT , UPDATE 
+ C. SELECT , DELETE 
+ D. SELECT , INSERT 
+
+34. 有一个表leanr，表里有三个字段分别是学号（student_id）,课程（kc）,成绩（grade）。查询表中存在课程重复2次以上的记录,显示课程和重复的次数,并且按照重复次数的降序排列,下列SQL语句正确的是：（）。 
+  A. SELECT kc,COUNT(kc) FROM leanr ORDER BY COUNT(kc) DESC  GROUP BY kc  WHERE COUNT(kc)>=2 ; 
+ B. SELECT kc,COUNT(kc) FROM leanr ORDER BY COUNT(kc) DESC  GROUP BY kc  HAVING COUNT(kc)>=2 ; 
+ C. SELECT kc,COUNT(kc) FROM leanr  GROUP BY kc  WHERE COUNT(kc)>=2   ORDER BY COUNT(kc) DESC; 
+ D. SELECT kc,COUNT(kc) FROM leanr  GROUP BY kc  HAVING COUNT(kc)>=2   ORDER BY COUNT(kc) DESC; 
+
+35. 查询客户姓名以及他的推荐人，没有推荐人的客户信息不显示，下列sql语句正确的是：
+  A. select a1.real_name customer,
+          a2.real_name recommender
+from account a1 join account a2
+on a1.id = a2.id;
+ B. select a1.real_name customer,
+          a2.real_name recommender
+from account a1 join account a2
+on a1.recommender_id = a2.recommender_id;
+ C. select a1.real_name customer,
+          a2.real_name recommender
+from account a1 join account a2
+on a1.recommender_id = a2.id;
+ D. select a1.real_name customer,
+          a2.real_name recommender
+from account a1, a2
+on a1.recommender_id = a2.id;
+
+36. 阅读以下SQL语句： INSERT INTO student(stu_no)VALUES(1001); SAVEPOINT sp1; DELETE FROM student; SAVEPOINT sp2; 如果想要恢复student表中所有数据，并且结束该事务的正确做法是（）。 
+  A. rollback to sp2; 
+  B. rollback to sp1; 
+  C. commit； 
+  D. rollback； 
+
+37. 操作account表和age_segment表，查询客户huangrong的年龄段，下列sql语句正确的是：
+  A. select real_name,birthdate,s.name
+from account a join age_segment s
+on round((sysdate - birthdate)/365) between lowage and hiage
+and real_name = 'huangrong';
+ B. select real_name,birthdate,s.name
+from account a left join age_segment s
+on round((sysdate - birthdate)/365) between lowage and hiage
+and real_name = 'huangrong';
+ C. select real_name,birthdate,s.name
+from account a left join age_segment s
+on round((sysdate - birthdate)/365) between lowage and hiage
+where real_name = 'huangrong';
+ D. select real_name,birthdate,s.name
+from account a left join age_segment s
+on round((sysdate - birthdate)/365) between lowage and hiage
+
+38. 请看下列建表语句：
+create table  test
+(c1 number(3)  constraint  test_c1_pk primary key,
+ c2 number(2) ,
+ c3 number(2) , 
+  constraint test_c2_ck  check (( c2 + c3  ) > 100 )  
+);
+下列选项中能向test表中成功实施插入数据的插入语句是：
+  A. insert into test values (1,40,60);
+ B. insert into test values (2,41,61);
+ C. insert into test values (3,101,1);
+ D. insert into test values (4,50,51);
+
+39. 操作account表和service表，查询申请远程登录业务的客户的数据，下列sql语句正确的是：
+  A. select real_name from account
+where in (select account_id from service);
+ B. select real_name from account o
+where id exists
+             (select 1 from service i
+              where o.id = i.account_id); 
+
+ C. select real_name from account
+where id in (select account_id from service);
+ D. select real_name from account o
+where exists
+             (select 1 from service i
+              where o.id = i.account_id);
+
+40. 下列语句在建表的同时在c2,c3列上创建了唯一约束，其中正确的是：
+  A. create table test
+(c1 number constraint test_c1_pk
+           primary key,
+ c2 number constraint test_c2_uk
+           foreign key,
+ c3 number constraint test_c3_uk
+           foreign key);
+ B. create table test
+(c1 number constraint test_c1_pk
+           primary key,
+ c2 number ,
+ c3 number ,
+ constraint test_c3_uk foreign key(c2,c3));  
+
+ C. create table test
+(c1 number constraint test_c1_pk
+           primary key,
+ c2 number ,
+ c3 number ,
+ constraint test_c3_uk unique(c2,c3));
+ D. create table test
+(c1 number constraint test_c1_pk
+           primary key,
+ c2 number constraint test_c2_uk
+           unique,
+ c3 number constraint test_c3_uk
+           unique);
+
+41. 阅读以下代码，并完成下边5题： 班级表：classInfo
+字段名	数据类型	约束
+claId	number(4)	primary key
+claName	varchar2(20)	not null INSERT INTO classInfo(claId,claName)VALUES(1,'Java1209'); INSERT INTO classInfo(claId,claName)VALUES(2,'Java1210'); INSERT INTO classInfo(claId,claName)VALUES(3,'Java1211'); 学生表：student
+字段名	数据类型	约束
+userName	varchar2(20)	primary key
+claId	number(4)	foreign key
+sex	char(3)	check(sex=’男’ or sex=’女’)
+age	number(4)	default 20
+score	number(4)	default 0 INSERT INTO student(username,claId,sex,age,score) VALUES(1，'张明',1,'男','30',97); INSERT INTO student(username,claId,sex,age,score) VALUES(2，'李小飞',1,'男','21',97); INSERT INTO student(username,claId,sex,age,score) VALUES(3，'许银亮',3,'女','27',97); INSERT INTO student(username,claId,sex,age,score) VALUES(4，'何姗',2,'女','25',97); INSERT INTO student(username,claId,sex,age,score) VALUES(5，'史小今',1,'男','33',97); INSERT INTO student(username,claId,sex) VALUES(6，'伍次友',3,'男'); 
+(1).  ”伍次友”的年龄与成绩分别是(   ) 
+  A.   0   0 
+ B.   30  97 
+ C.   20  0 
+ D.   20  20 
+
+(2). SELECT * FROM student WHERE userName LIKE '%小%'，该语句能查询到记录数是（） 
+  A. 1 
+ B. 2 
+ C. 3 
+ D. 4 
+
+(3).  查询Java1209班和Java1210班所有学生信息。以下语句正确的是（） 
+  A. SELECT * FROM student WHERE claId in (SELECT claId FROM classInfo WHERE claName='Java1209' OR claName='Java1210'); 
+  B. SELECT * FROM student WHERE claId = (SELECT claId FROM classInfo WHERE claName='Java1209' OR claName='Java1210'); 
+  C. SELECT userName,a.claId,sex,age,score FROM student a,classInfo b WHERE claName=' Java1209' OR claName=' Java1210'; 
+  D. SELECT * FROM student WHERE claId in (SELECT claId FROM classInfo WHERE claName='Java1209' AND claName='Java1210'); 
+
+(4). 关于下边语句说法正确的是（）。 SELECT SUM(score),sex FROM student GROUP BY sex 
+
+  A. 查询语句报错 
+  B. 该查询语句无意义 
+  C. 用于查询所有学生的成绩总和 
+  D. 用于查询男生和女生的成绩总和分别是多少
+
+(5). 查询所有班级信息，并显示每个班级的学生人数，实现效果如下图： 
+claId	claName	       stuNum
+1	Java1209	           3
+2	Java1210 	1
+3	Java1211  	2           
+
+以下查询语句能够实现上述功能的是（）。 
+  A. SELECT claId,claName, (SELECT COUNT(*) FROM student b WHERE b.claId=a.claId) AS stuNum FROM classInfo a; 
+ B. SELECT claId,claName, (SELECT COUNT(*) FROM student) AS stuNum FROM classInfo; 
+ C. SELECT claId,claName, (SELECT COUNT(*) FROM classInfo) AS stuNum FROM classInfo; 
+ D. SELECT claId,claName, (SELECT SUM(userName) FROM student b WHERE a.claId=b.claId) AS stuNum FROM classInfo b; 
+
+42. 有产品表 Products，用于记载产品的详细信息，表结构及数据如下：  
+ProductID	ProductName	          UnitPrice
+1	              Chai	                      18.00
+2	             Chang	                      19.00
+3	          Aniseed Syrup	           10.00
+4	      Chef Anton's Cajun Seasoning    	22.00
+。。。其他数据，有订单表 Orders，用于记载订单的信息，表结构及数据如下：
+OrderID	CustomerID   EmployeeID
+10248	VINET	        5
+10249	TOMSP	        6
+。。。其他数据，有订单详细表 OrderDetails，用于记载订单的详细信息，表结构及数据如下：
+OrderID	ProductID       UnitPrice     Quantity
+10248	11	        14.00	  12
+10248	42	         9.80	  10
+10248	72	       34.80	  5
+10249	14	       18.60	  9
+10249	51	       42.40	  40
+。。。其他数据	 	 	 
+(1). 现需要查询产品表中所有产品的id、价格、均价以及该产品价格与均价的差值。下列 SQL 语句中，正确的是（）。
+ A. SELECT ProductId,UnitPrice,(SELECT AVG(unitprice) FROM Products) AS "均价",UnitPrice - (SELECT AVG(unitprice) FROM Products) AS "差额" FROM Products
+ B. SELECT ProductId,UnitPrice,(SELECT AVG(unitprice) FROM Products) AS "均价",UnitPrice - AVG(unitprice) AS “差额” FROM Products
+ C. SELECT ProductId,UnitPrice,AVG(unitprice) AS “均价”,UnitPrice - AVG(unitprice) AS “差额” FROM Products
+ D. SELECT ProductId,UnitPrice,AVG(unitprice) AS “均价”,UnitPrice - AVG(unitprice) AS “差额” FROM Products GROUP BY ProductID
+
+(2). 需要查询产品表中单价最低的产品的详细信息（注意：可能会有相同价格的产品）。下列 SQL 语句中，正确的是（）。
+ A. SELECT  * FROM Products ORDER BY UnitPrice WHERE ROWNUM<2
+ B. SELECT  * FROM Products ORDER BY UnitPrice DESC WHERE ROWNUM<2
+ C. SELECT * FROM Products WHERE UnitPrice = (SELECT MIN(UnitPrice) FROM Products)
+ D. SELECT * FROM Products WHERE UnitPrice = MIN(UnitPrice)
+
+(3). 需要查询订购数量最多的前5种商品的ID 及其订购总数（提示：OrderDetails 表中的 Quantity 列表示产品的订购数量）,下列SQL 语句中，正确的是（）。
+ A. SELECT ProductId,SUM(Quantity) AS "Sum" FROM OrderDetails  GROUP BY ProductID HAVING ROWNUM<=5
+ B. SELECT ProductId,SUM(Quantity) AS "Sum"  FROM orderdetails GROUP BY ProductID DESC HAVING ROWNUM<=5
+ C. SELECT ProductId,SUM(Quantity) AS "Sum"  FROM OrderDetails  GROUP BY ProductID ORDER BY SUM(Quantity) DESC  WHERE ROWNUM<=5
+ D. SELECT * FROM (SELECT ProductId,SUM(Quantity) AS "Sum"  FROM OrderDetails  GROUP BY ProductID  ORDER BY SUM(Quantity) DESC) WHERE ROWNUM<=5
+
+(4). 需要查询产品表中，产品名称以字符串 cha 开头，且名称的总长度为4个字符的产品的详细数据。下列SQL 语句中，正确的是（）。
+ A. SELECT * FROM Products WHERE ProductName LIKE 'cha%'
+ B. SELECT * FROM Products WHERE ProductName LIKE 'cha_'
+ C. SELECT * FROM Products WHERE ProductName = 'cha%'
+ D. SELECT * FROM Products WHERE ProductName = 'cha_'
+
+(5). 需要查询订单ID为 10248 的订单所购买的商品 ID、商品名称、顾客ID以及购买数量。查询的结果如下所示：
+ProductID	ProductName	CustomerID	Quantity
+11	Queso Cabrales	VINET	12
+42	Singaporean Hokkien Fried Mee	VINET	10
+72	Mozzarella di Giovanni	VINET	5 下列SQL 语句中，正确的是（）。
+ A. SELECT od.ProductID,p.ProductName,o.CustomerID, od.Quantity  FROM Products  p JOIN OrderDetails od, Orders  o  WHERE P.ProductID = od.ProductID AND  od.OrderID = o.OrderID and o.OrderID = 10248
+ B. SELECT od.ProductID,p.ProductName,o.CustomerID, od.Quantity  FROM Products  p JOIN OrderDetails od, Orders  o  ON p.ProductID = od.ProductID AND  od.OrderID = o.OrderID WHERE o.OrderID = 10248
+ C. SELECT od.ProductID,p.ProductName,o.CustomerID, od.Quantity  FROM Products  p JOIN OrderDetails  od ON p.ProductID = od.ProductID AND Orders  o ON od.OrderID = o.OrderID WHERE o.OrderID = 10248
+ D. SELECT  od.ProductID,p.ProductName,o.CustomerID, od.Quantity FROM Products  p JOIN OrderDetails  od ON p.ProductID = od.ProductID JOIN Orders  o ON od.OrderID = o.OrderID WHERE o.OrderID = 10248
