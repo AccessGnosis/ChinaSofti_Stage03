@@ -1,0 +1,19 @@
+/**
+* Describe: 
+* Keyword: 
+* Hint: 
+* Filename: DBUtil02.java
+* Copyright 2017-08-25 By Gnosis. Allright reserved.
+* Time: ионГ11:03:25
+*/
+package com.chinasofti.day02.util;
+
+import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.commons.dbcp.BasicDataSourceFactory;
+
+public class DBUtil02 {
+
+	public static void main(String[] args) {
+		BasicDataSource bds = new BasicDataSource();
+	}
+}
