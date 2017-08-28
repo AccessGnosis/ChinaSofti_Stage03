@@ -14,6 +14,10 @@ public class User {
 	public String password;
 	public int age;
 
+	static {
+		System.out.println("静态代码块被调用了");
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
